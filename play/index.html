@@ -1,0 +1,229 @@
+	
+    <script>
+      const isMatch = (arr,match) => arr.filter(e=>e==match).length
+      window.onload = () => {
+const gxme = decodeURI(window.location.search.slice(1));
+const gxmes = new Map([
+    // add gxme names on first array elem, add gxme links on second array elem
+    ["Tetris","https://chvin.github.io/react-tetris/?lan=en"],
+    ["Run 3","https://xlegends.github.io/run3"],
+    ["Slope 2","https://xlegends.github.io/gxmehub/play/slope2.html"],
+    ["Spend Bill Gates Money","https://neal.fun/spend/"],
+    ["Spend Jeff Bezos Money","https://3pic.github.io/money"],
+    ["2048","https://hczhcz.github.io/2048/20ez/"],
+    ["Banana Bread","https://kripken.github.io/BananaBread/cube2/bb.html"],
+    ["Tower Stack","https://3pic.github.io/tower"],
+    ["Rooftop Snipers","https://xlegends.github.io/rooftop-snipers/"],
+    ["Tube Jumpers","https://combinatronics.io/xlegends/bald/main/index.html"],
+    ["Super Hot","https://xlegends.github.io/superhot"],
+    ["Mini Golf 2D","https://www.mathplayground.com/mini-golf-2d/index.html"],
+    ["Temple Crossing","https://www.mathplayground.com/temple-crossing/index.html"],
+    ["FNF Links","https://docs.google.com/document/d/1Ha0VgSXvb4bClUJYzDocY83hlYhINFZzUnxS09c7kzs/edit?usp=sharing"],
+    ["Maximum Acceleration","https://theadvancedsociety-tam.tbt.mx/tam-make-a-car-simulator/"],
+    ["Draw The Hill","https://www.mathplayground.com/draw-the-hill/index.html"],
+    ["Slope","https://xlegends.github.io/slope-1/"],
+    ["Offline Dino Chrome","https://chrisdothtml.github.io/chrome-dino/"],
+    ["Doge Miner","https://xlegends.github.io/DogeMiner/"],
+    ["Glitch Maze","https://xlegends.github.io/gxmehub/play/glitchmaze.html"],
+    ["Stack Bump 3D","https://xlegends.github.io/stackbump3d"],
+    ["Getting Over It","https://scratch.mit.edu/projects/389464290/embed"],
+    ["Make A Car Simulator","https://theadvancedsociety-tam.tbt.mx/tam-make-a-car-simulator/"],
+    ["Vex 3","https://xlegends.github.io/vexx3"],
+    ["Vex 4","https://xlegends.github.io/vex4"],
+    ["Vex 5","https://xlegends.github.io/vex5wrk"],
+    ["Vex 6","https://xlegends.github.io/vex6plswork"],
+    ["Roblox","https://sites.google.com/view/matheducation69/rawblocks"],
+    ["Cookie Run: Kingdom","https://www.scienceeducation.gq/go/hvtrs8%2F-nmw%2Cge%2Frlcy-dgvqiqtgrq-aoppmrctkol%2F1455-cmoiig-pul/"],
+    ["1v1.lol","https://nowcollege.com/uploads/5/5/6/7/5567194/custom_themes/315300867982782623/1v1_lol.html"],
+    ["Fluid Simulation","https://paveldogreat.github.io/WebGL-Fluid-Simulation/"],
+    ["FNAF 1","https://www.scienceeducation.gq/go/hvtrs8%2F-wuw%2Cpna%7B-eaoeq.aoo%2Fkfpaoe-270%3B3%2Chvmn/"],
+    ["FNAF 4","https://www.scienceeducation.gq/go/hvtrs8%2F-sarctah%2Cimgcmgs%2Crgpn.ao-arp%2Chvmn%3Fkd%3F8%3A656%3A8%3A%26vupbm%3Ddansg%26dunl%2Fsargel%3Dvrwe/"],
+    ["Jenga","https://chandlerprall.github.io/Physijs/examples/jenga.html"],
+    ["Snake","https://xlegends.github.io/gxmehub/play/snake.html"],
+    ["Crossy Road","nowork"],
+    ["Madalin Stunt Cars 2","https://gavan228.github.io/gaming/madalin-cars-multiplayer/"],
+    ["Basketball Stars","https://www-ig-opensocial.googleusercontent.com/gadgets/ifr?url=https://sites.google.com/site/basketballlegendunblocked/basketball_stars.xml"],
+    ["Multi-Gxmes","https://xlegends.github.io/gfiles/list.html"],
+    ["Paper.io 2","https://script.google.com/macros/s/AKfycbxO8jKpDOwFYpSGrGbReR4Mv2e1-6T4uHsWBphygjzyG8Qqpvij/exec?mid=ACjPJvF3RvJN6ufwCWpNNV7Par8IPo_9lbty1bO67Qvx2J8QH4lQgX-BZCHdug82MzvSQC5pYR9rmj_VC8TA3lvxG5elm5-BxJGA_RfS1UGToz7yegvUAvawzQNt8R9EAHoF3T_as6giOZ2e-5x05Q&bc=transparent&f=Helvetica%2C+Arial%2C+Verdana%2C+sans-serif&tc=%23b5b5b5&lc=%23f3f2f2"],
+    ["Fighter Aircraft Pilot","https://theadvancedsociety-tam.tbt.mx/tam-fighter-aircraft-pilot/"],
+    ["Geometry Dash","https://scratch.mit.edu/projects/105500895/embed"],
+    ["Particle Clicker","https://combinatronics.io/particle-clicker/particle-clicker/master/index.html"],
+    ["Disc*rd","https://www.xlegends.cf/service/hvtrs8%2F-dksaopd%2Ccmm-lmgkn"],
+    ["FNAF Sister Location","https://ludicrous.gq/surf/https://w8.snokido.com/games/html5/fnaf/sister-location/index.html"],
+    ["Drift Boss","https://www.mathplayground.com/drift-boss-v3/index.html"],
+    ["Zombs Royale","https://theadvancedsociety-tam.tbt.mx/tmm-zombsroyale/"],
+    ["Orbital Survival","https://s3-eu-west-1.amazonaws.com/apps.playcanvas.com/aOZ5lcoo/index.html"],
+    ["Economical 2","https://xlegends.github.io/economical2"],
+    ["Sealflix (free movies)","nowork"],
+    ["FNAF 3","https://xlegends.github.io/fnaf3"],
+    ["Justfall.lol","https://www.scienceeducation.gq/go/hvtrs8%2F-jwsvfcln.non/"],
+    ["FNAF 2","https://xlegends.github.io/fnaf2plswork"],
+    ["Wings.io","https://www.scienceeducation.gq/go/hvtrs8%2F-wknes%2Cim/"],
+    ["Drift Hunters","https://xlegends.github.io/drifthunters"],
+    ["Chess","nowork"],
+    ["1 On 1 Soccer","https://e9x.github.io/ruffle-example"],
+    ["Rolling Sky","https://advanced-channeler.02.gz-associates.com/?t=tmm-webgl-rollingsky"],
+    ["Cookie Clicker","https://alexaiden1974.github.io/cookieclicker/"],
+    ["Shell Shockers","https://tam-shellshockers.arfotoarte.com"],
+    ["Retrobowl","https://xlegends.github.io/retro-bowl/"],
+    ["Baldi's Basics","https://combinatronics.io/xlegends/education.github.io/master/web/built-games/baldis-basics/index.html"],
+    ["ESPN Free","https://espn.shirtjs.icu/"],
+    ["Short Life","https://advanced-channeler.02.gz-associates.com/?t=tam-short-life"],
+    ["Snowbattle.io","https://dagecko00.github.io/Unbo....................................................................................../projects/snowbattle/"],
+    ["Gun Mayham 1","https://xlegends.github.io/gxmehub/play/gunmayhem1.html"],
+    ["Gun Mayham 2","https://xlegends.github.io/gxmehub/play/gunmayhem2.html"],
+    ["Flight","https://xlegends.github.io/gxmehub/play/flight.html"],
+    ["FNAF Customizable","https://xlegends.github.io/Five-Nights-at-Freddys-Web/"],
+    ["Doom 1","https://pixelsuft.github.io/dosbox-demos/doom/"],
+    ["Moto X3M","https://xlegends.github.io/motox3m"],
+    ["Grand Prix Circut","https://pixelsuft.github.io/dosbox-demos/grandprix/"],
+    ["MS Flight 1.0","https://pixelsuft.github.io/dosbox-demos/msflight/"],
+    ["Deal Or No Deal","https://www.xlegends.gq/go/hvtrs8%2F-wuw%2Cgcmgnmrc.aoo%2Fwpnocd-gcmgs-suf-Dgan-mr%2FNm-Fecl-/"],
+    ["Soccer Legends","nowork"],
+    ["Riddle School 1","https://xlegends.github.io/gxmehub/play/riddleschool1.html"],
+    ["Riddle School 2","https://xlegends.github.io/gxmehub/play/riddleschool2.html"],
+    ["Riddle School 3","https://xlegends.github.io/gxmehub/play/riddleschool3.html"],
+    ["Riddle School 4","https://xlegends.github.io/gxmehub/play/riddleschool4.html"],
+    ["Riddle School 5","https://xlegends.github.io/gxmehub/play/riddleschool5.html"],
+    ["Riddle Transfer 1","https://xlegends.github.io/gxmehub/play/riddleschool1.html"],
+    ["Riddle Transfer 2","https://xlegends.github.io/gxmehub/play/riddleschool2.html"],
+    ["DVD ScreenSaver","https://xlegends.github.io/dvdScreenSaver/"],
+    ["Doom 2","https://pixelsuft.github.io/dosbox-demos/doom2/"],
+    ["Spotify","https://cdn.wholesomewindow.xyz/service/hvtrs8%2F-orel.qpmtkf%7B.aoo%2F"],
+    ["Pandemic 1","https://xlegends.github.io/gxmehub/play/pandemic1.html"],
+    ["Pandemic 2","https://xlegends.github.io/gxmehub/play/pandemic2.html"],
+    ["The Impossible Quiz 1","https://xlegends.github.io/gxmehub/play/theimpossiblequiz1.html"],
+    ["The Impossible Quiz 2","https://xlegends.github.io/gxmehub/play/theimpossiblequiz2.html"],
+    ["Worlds Hardest Gxme 1","https://xlegends.github.io/gxmehub/play/worldshardestgxme1.html"],
+    ["Worlds Hardest Gxme 2","https://xlegends.github.io/gxmehub/play/worldshardestgxme2.html"],
+    ["Instagram","https://cdn.wholesomewindow.xyz/service/hvtrs8%2F-wuw%2Cilsvaercm%2Ccmm-"],
+    ["TikTok","https://lucidofficial.xyz/service/hvtrs8%2F-wuw%2Ctkkvoi.aoo"],
+    ["Among Us","https://google-opensocial.googleusercontent.com/gadgets/ifr?url=https://sites.google.com/site/453535fgsew45/among-us1.xml?attredirects=0&amp;d=1&quot"],
+    ["Achievement Unlocked","https://xlegends.github.io/gxmehub/play/achievementunlocked.html"],
+    ["Rogue Carrier","https://xlegends.github.io/carrier-testing/"],
+    ["Temple Run 2","https://xlegends.github.io/tpp2/"],
+    ["Google Feud","https://script.google.com/macros/s/AKfycbwsZ8H_YdcS9zu7gsGcgpY67QDa94RpbNL4OH0OlPvuunzwiNGd/exec"],
+    ["Burger Tycoon","https://xlegends.github.io/gxmehub/play/burgertycoon.html"],
+    ["Evio","https://node7.truemyth.ml/web/_aHR0cHM6Ly9ldi5pbw==_/"],
+    ["Osu","https://webosu.online"],
+    ["Gangster Man 3D","https://xlegends.github.io/dvfdfdff/"],
+    ["Poppys Playtime","https://xlegends.github.io/sdfdshf"],
+    ["Pocket League 3D","https://xlegends.github.io/pocketleague"],
+    ["Red Ball 4","https://xlegends.github.io/redball4e"],
+    ["Rally Point 5","https://xlegends.github.io/rp5/"],
+    ["Medival Battle 2P","https://xlegends.github.io/demon"],
+    ["Ragdoll Battle 2P","https://xlegends.github.io/ragdoll2p"],
+    ["Squid Game Escape","https://xlegends.github.io/squidgame"],
+    ["Burrito Bison","https://zayaruzostreetorgan.com/uploads/5/5/6/7/5567194/custom_themes/607721921917323670/burrito-bison-ll.html"],
+    ["BitLife","https://xlegends.github.io/bitlife/"],
+    ["Cut The Rope","https://moyaimoment.github.io/games/cut-rope"],
+    ["Death Run 3D","https://xlegends.github.io/IlyaErsozFkingSophiaPatron/games/death-run-3d"],
+    ["Cut The Rope Time Travel","https://svxf.github.io/arcade/gfiles/html5/cuttheropetimetravel"],
+    ["Basketball.io","https://mathgames66.github.io/46a0946f-dba7-45ea-b645-cd04bb423bc4/content/unblockeds-games.com/webgl/basketball-io/index.html"],
+    ["Deal Or No Deal","https://xlegends.github.io/dealornodeal"],
+    ["Discord","https://whitenames.bar/service/hvtrs8%2F-dksaopd%2Ccmm-arp"],
+    ["Granny","https://zayaruzostreetorgan.com/uploads/5/5/6/7/5567194/custom_themes/253523348422157506/1granny.html"],
+    ["Cut The Rope Holiday","https://xlegends.github.io/CTR-Holiday/"],
+    ["Cannon Basketball 4","https://xlegends.github.io/cannonbasketball4"],
+    ["Defend The Tank","https://xlegends.github.io/defendthetank"],
+    ["Getaway Shootout","https://xlegends.github.io/getawayshootout"],
+    ["Looflix","https://watch.looflix.net"],
+    ["HexGL","https://xlegends.github.io/hexgl"],
+    ["Duck Life 1","https://xlegends.github.io/gxmehub/play/ducklife1.html"],
+    ["Duck Life 2","https://xlegends.github.io/gxmehub/play/ducklife2.html"],
+    ["Duck Life 3","https://xlegends.github.io/gxmehub/play/ducklife3.html"],
+    ["Duck Life 4","https://xlegends.github.io/gxmehub/play/ducklife4.html"],
+    ["Effing Worms","https://xlegends.github.io/gxmehub/play/effingworms.html"],
+    ["Effing Worms 2","https://xlegends.github.io/gxmehub/play/effingworms2.html"],
+    ["Fancy Pants Adventure","https://xlegends.github.io/gxmehub/play/fancypantsadventure.html"],
+    ["Fancy Pants Adventure 2","https://xlegends.github.io/gxmehub/play/fancypantsadventure2.html"],
+    ["Economical","https://xlegends.github.io/economical"],
+    ["Aweswome Tanks 2","https://xlegends.github.io/gxmehub/play/awesometanks2.html"],
+    ["Candy Jump","https://www.xlegends.gq/go/hvtrs8%2F-wuw%2Ccmonmctjgcmgs%2Ccmm-0%2Fccnfy%2Fjwmr%2Frlcy"],
+    ["Fireboy & Watergirl 1","https://xlegends.github.io/science/games/fbwg"],
+    ["Fireboy & Watergirl 2","https://xlegends.github.io/science/games/fbwg2"],
+    ["Fireboy & Watergirl 3","https://xlegends.github.io/science/games/fbwg3"],
+    ["Fireboy & Watergirl 4","https://xlegends.github.io/science/games/fbwg4"],
+    ["arras.io","https://seaguli.github.io/arras-mayhem"],
+    ["GeForce Now","https://www.schooleducation.cf/service/hvtrs8%2F-pna%7B.eedopcgnmw%2Ccmm-mcln%2F"],
+    ["JustBuild.lol","https://justbuild-cdb86.firebaseapp.com"],
+    ["Subway Surfers","https://www.schooleducation.gq/storage/subwaymaybe/subway-surfers/index.html"],
+    ["Elastic Man","https://xlegends.github.io/elasticman/"]
+    ])
+    if (isMatch(["Osu","Cookie Clicker","Roblox","TikTok","FNAF 4","Burrito Bison"],gxme)) {
+      location.href = gxmes.get(gxme)
+    } else {
+    document.write(`
+<link rel = "stylesheet" href="../style.css">
+
+<h2 style = "color:white">${gxme.replace(/\&/g,"&amp;").replace(/\>/g,"&gt;").replace(/\</g,"&lt;").replace(/\>/g,"&gt;").replace(/\</g,"&lt;").replace(/\"/g,"&quot;").replace(/\'/g,"&#x27")}</h2>
+<br>
+<button>${gxmes.get(gxme) == "nowork" ? "this game is unsupported :(" : "Play now!"}</button>
+<script>
+document.querySelector('button').onclick = function() {
+ var url = "${gxmes.get(gxme)}";
+ var iframe = document.createElement('iframe');
+iframe.style.border = 'none';
+iframe.style.width = '100vw';
+iframe.style.height = '100vh';
+iframe.style.margin = '0';
+iframe.src = url;
+document.body.appendChild(iframe);
+document.querySelector('button').style.display = "none"
+document.querySelector('h2').style.display = "none"
+	setTimeout(() => {
+		window.scrollTo(1000, 0);
+	},500)
+}
+<\/script>
+<style>
+* {
+    color: white; 
+    font-family: arial;
+    text-align: center;
+}
+button {
+    width: 220px; 
+    height: 40px;
+    border-radius: 12px;
+    background-color: #1F51FF;
+    font-family: Arial, Helvetica, sans-serif;
+    border: none;
+    transition: background-color 500ms;
+}
+button:hover {
+    background-color: #1F51FF;
+}
+</style>
+`)
+    }
+      }
+    </script>
+<!--
+    var urlObj = new window.URL(window.location.href);
+    var url = "${gxmes.get(gxme)}";
+
+    if (url) {
+        var win;
+
+        document.querySelector('button').onclick = function() {
+            if (win) {
+                win.focus();
+            } 
+            else {
+                win = window.open();
+                win.document.body.style.margin = '0';
+                win.document.body.style.height = '100vh';
+                var iframe = win.document.createElement('iframe');
+                iframe.style.border = 'none';
+                iframe.style.width = '100%';
+                iframe.style.height = '100%';
+                iframe.style.margin = '0';
+                iframe.src = url;
+                win.document.body.appendChild(iframe);
+            }
+            document.querySelector('button').style.background='#ff5148';
+            document.querySelector('button').innerHTML="Page Opened!";
+        };
+    }
+-->
